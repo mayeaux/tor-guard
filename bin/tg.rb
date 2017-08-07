@@ -3,7 +3,7 @@
 # require 'tor-guard'
 require_relative '../lib/tor-guard'
 
-if ARGV.length < 1
+if ARGV.empty?
   puts 'Usage: tg [ip-address]'
   exit 1
 else

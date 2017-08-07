@@ -5,12 +5,12 @@ module TorGuard
   @exit_ips = {}
 
   def self.exit_ips
-    self.lazy_refresh
+    lazy_refresh
     @exit_ips.dup
   end
 
   def self.exit_node?(ip_address)
-    self.lazy_refresh
+    lazy_refresh
     @exit_ips.include?(ip_address)
   end
 
@@ -21,22 +21,22 @@ module TorGuard
 
     status, _ = response.status
 
-    if status == '200'
-      response.read.split("\n").each do |line|
-        next if line.start_with?('#')
+    return unless status == '200'
 
-        new_exit_ips[line] = true
-      end
+    response.read.split("\n").each do |line|
+      next if line.start_with?('#')
 
-      @exit_ips = new_exit_ips
-      @last_refreshed = Time.now
+      new_exit_ips[line] = true
     end
+
+    @exit_ips = new_exit_ips
+    @last_refreshed = Time.now
   end
 
   def self.lazy_refresh
     if @last_refreshed.nil? ||
         (Time.now - @last_refreshed) >= @configuration.refresh_interval
-      self.refresh!
+      refresh!
     end
   end
 end
