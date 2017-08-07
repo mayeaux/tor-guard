@@ -8,7 +8,7 @@ Installation
 ------------
 
 ```bash
-gem install tor-guard
+$ gem install tor-guard
 ```
 
 Usage
