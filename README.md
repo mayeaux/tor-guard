@@ -21,7 +21,7 @@ library.
    false
 
 ```bash
-tg 108.56.199.13
+$ tg 108.56.199.13
 ```
 
 2. You can require the library and check within your own code.
@@ -38,7 +38,7 @@ The library can tweak the refresh interval. By default, the library will
 refresh the internal list of exit nodes every 15 minutes. You can make the
 interval shorter or longer by providing the desired number of seconds:
 
-```bash
+```ruby
 TorGuard.configure do |config|
     config.refresh_interval = 60 # one minute
 end
