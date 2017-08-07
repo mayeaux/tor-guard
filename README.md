@@ -24,6 +24,14 @@ library.
 $ tg 108.56.199.13
 ```
 
+Note, the executable will return a successful status code if the IP address is
+an exit node. If it's not an exit node then the executable will return a non
+successful exit node. This can be leveraged when scripting, for example:
+
+```bash
+$ tg '108.56.199.13' && echo "Yep, it's an exit node"
+```
+
 2. You can require the library and check within your own code.
 
 ```ruby
