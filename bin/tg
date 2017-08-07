@@ -7,4 +7,10 @@ if ARGV.empty?
   exit 1
 end
 
-puts TorGuard.exit_node?(ARGV.first)
+if TorGuard.exit_node?(ARGV.first)
+  puts 'True'
+  exit 0
+else
+  puts 'False'
+  exit 1
+end

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'tor-guard'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2017-08-06'
   s.summary     = 'Identify IPs coming through the Tor network.'
   s.description = 'Easily identify IPs coming through the Tor network.'
