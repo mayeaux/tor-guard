@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.executables = ['tg']
   s.files       = Dir.glob('{bin,lib}/**/*.rb') + ['README.md']
   s.homepage    = 'https://rubygems.org/gems/tor-guard.rb'
-  s.license     = 'GPL'
+  s.license     = 'GPL-3.0'
 end
