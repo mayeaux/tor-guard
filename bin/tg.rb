@@ -7,5 +7,5 @@ if ARGV.length < 1
   puts 'Usage: tg [ip-address]'
   exit 1
 else
-  TorGuard.exit_node?(ARGV.first)
+  puts TorGuard.exit_node?(ARGV.first)
 end
